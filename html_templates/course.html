@@ -1,0 +1,32 @@
+<!--#This code is adapted from http://learn-2-code.appspot.com/ and https://www.udacity.com/course/viewer#!/c-nd000/l-4195258602/m-3971648689
+-->
+{% extends "base.html" %}
+{% block content %}
+
+<div class="section">
+	<h1 class="title">
+		Course {{ course_number }}: {{ course.title }}
+	</h1>
+	<p>{{ course.description }}</p>
+</div>
+
+{% for lesson in course.lessons %}
+<div class="section">
+	<h2 class="section-title" id="lesson-{{ loop.index }}">
+		Lesson {{ loop.index }}: {{ lesson.title }}
+	</h2>
+	<p>
+		{{ lesson.description }}
+	</p>
+</div>
+
+<ul>
+{% for concept in lesson.concepts %}
+	<li>
+		<b>{{ concept.title }}</b>: {{ concept.description }}
+	</li>
+{% endfor %}
+</ul>
+
+{% endfor %}
+{% endblock %}
