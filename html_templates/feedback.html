@@ -4,7 +4,14 @@
 {% extends "base.html" %}
 {% block content %}
 <h2>Feedback</h2>
-<br>
+<p> Post your comments about this site here
+
+    <center><form action="/sign?guestbook_name={{ guestbook_name }}" method="post">
+      <div><textarea name="content" rows="3" cols="60"></textarea></div>
+      <div><input type="submit" value="Post your Comments"></div>
+    </form></center>
+
+    <br>
 {% for greeting in greetings %}
       {% if greeting.author %}
         <b>{{ greeting.author.email }}
@@ -18,17 +25,7 @@
       <blockquote>{{ greeting.content }}</blockquote>
     {% endfor %}
 
-    <form action="/sign?guestbook_name={{ guestbook_name }}" method="post">
-      <div><textarea name="content" rows="3" cols="60"></textarea></div>
-      <div><input type="submit" value="Sign Guestbook"></div>
-    </form>
-
     <hr>
-
-    <form>Guestbook name:
-      <input value="{{ guestbook_name }}" name="guestbook_name">
-      <input type="submit" value="switch">
-    </form>
 
     <a href="{{ url|safe }}">{{ url_linktext }}</a>
     {% endblock %}
