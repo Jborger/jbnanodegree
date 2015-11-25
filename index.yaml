@@ -10,42 +10,8 @@ indexes:
 # automatically uploaded to the admin console when you next deploy
 # your application using appcfg.py.
 
-- kind: CodeExample
-  ancestor: yes
-  properties:
-  - name: language
-  - name: votes
-    direction: desc
-
-- kind: CodePenExample
-  ancestor: yes
-  properties:
-  - name: votes
-    direction: desc
-
 - kind: Greeting
   ancestor: yes
   properties:
   - name: date
     direction: desc
-
-- kind: Post
-  ancestor: yes
-  properties:
-  - name: date
-    direction: desc
-
-- kind: Submission
-  ancestor: yes
-  properties:
-  - name: date
-    direction: desc
-
-- kind: Submission
-  ancestor: yes
-  properties:
-  - name: date
-    direction: desc
-  - name: link
-  - name: description
-  - name: image_url

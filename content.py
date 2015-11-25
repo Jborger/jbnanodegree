@@ -1,32 +1,4 @@
-#This code is adapted from http://learn-2-code.appspot.com/ and https://www.udacity.com/course/viewer#!/c-nd000/l-4195258602/m-3971648689
-
-# Create the wall
-#DEFAULT_GUESTBOOK_NAME = 'default_guestbook'
-#create html struture using string substitution
-#HTML_TEMPLATE = """<!DOCTYPE html>
-#<head>
-#  <meta charset="utf-8">
-#  <title>Feedback</title>
-#</head>
-#<body>
-#  <form action="/sign?%s" method="post">
-#    <div><textarea name="content" rows="3" cols="60"></textarea></div>
-#    <div><input type="submit" value="Post Comment"></div>
-#  </form>
-#  <hr>
-#  <form>Wall:
-#    <input value="%s" name="wall_name">
-#    <input type="submit" value="Switch">
-#  </form>
-#  <br>
-#  Logged in as: <strong>%s</strong><br>
-#  <a href="%s">%s</a>
-#  <!-- user comments start here -->
-#  %s
-#</body>
-#</html>
-#"""
-
+#This code is adapted from http://learn-2-code.appspot.com/ and https://www.udacity.com/course/viewer#!/c-nd000/l-4195258602/m-3971648689,  and https://cloud.google.com/appengine/docs/python/gettingstartedpython27/handlingforms
 
 ##Content used to fill in my notes section
 
@@ -228,12 +200,13 @@ SECTIONS = [
 	 "href"      : "additional_resources/",
 	 "short_title":"Resources",
 	 "id"        : "resources",
-	 "alt"			 : "Magic Mouse and links"
+	 "alt"		 : "Magic Mouse and links"
 	},
 	{"title"     : "Feedback",
 	 "image_url" : "/images/flaticon_23.png",
 	 "href"      : "feedback/",
 	 "short_title":"Feedback",
 	 "id"        : "feedback",
-	 "alt"			 : "feedback icon"
-	}]
+	 "alt"	     : "feedback icon"
+	}
+]
