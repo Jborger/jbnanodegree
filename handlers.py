@@ -1,10 +1,8 @@
 #This code is adapted from http://learn-2-code.appspot.com/ and https://www.udacity.com/course/viewer#!/c-nd000/l-4195258602/m-3971648689,  and https://cloud.google.com/appengine/docs/python/gettingstartedpython27/handlingforms
 #Bring in the following frameworks
 import os
-import cgi
 import webapp2
 import jinja2
-from urlparse import urlparse
 from google.appengine.ext import ndb
 from google.appengine.api import users
 from content import COURSES, TOPICS, SECTIONS
@@ -69,41 +67,41 @@ class ResourcesHandler(Handler):
 
 class Guestbook(Handler):
     def get(self):
+        numOfQuery = 10
         guestbook_name = self.request.get('guestbook_name',DEFAULT_GUESTBOOK_NAME)
         greetings_query = Greeting.query(
         ancestor=guestbook_key(DEFAULT_GUESTBOOK_NAME)).order(-Greeting.date)
-        greetings = greetings_query.fetch(10)
-
+        greetings = greetings_query.fetch(numOfQuery)
+        formmessage=self.request.get('formmessage')
         template_values = {
            'greetings': greetings,
-           'guestbook_name': urllib.quote_plus(DEFAULT_GUESTBOOK_NAME)
+           'guestbook_name': urllib.quote_plus(DEFAULT_GUESTBOOK_NAME),
+           'formmessage': formmessage
         }
-        
-        self.render('feedback.html', page_name="feedback", greetings = greetings_query.fetch(10))
+        self.render('feedback.html', page_name="feedback", greetings = greetings_query.fetch(numOfQuery))
 
     def post(self):
-        # We set the same parent key on the 'Greeting' to ensure each
-        # Greeting is in the same entity group. Queries across the
-        # single entity group will be consistent. However, the write
-        # rate to a single entity group should be limited to
-        # ~1/second.
         guestbook_name = self.request.get('guestbook_name',
                                           DEFAULT_GUESTBOOK_NAME)
         greeting = Greeting(parent=guestbook_key(DEFAULT_GUESTBOOK_NAME))
 
-        if users.get_current_user():
-            greeting.author = Author(
-                    identity=users.get_current_user().user_id(),
-                    email=users.get_current_user().email())
+        #if users.get_current_user():
+         #   greeting.author = Author(
+          #          identity=users.get_current_user().user_id(),
+           #         email=users.get_current_user().email())
         # Get the content from our request parameters, in this case, the message
         # is in the parameter 'content'
+        #formmessage=self.request.get('formmessage')
         greeting.content = self.request.get('content')
+
         #check input server side for blank input
         if not greeting.content.strip(" "):
-            self.redirect('/feedback/add')
+            self.response.out.write("Your input is not valid.  Please use your browsers back button and enter something")
+
         else: 
          # Write to the Google Database
             greeting.put()
+            query_params = {'guestbook_name': DEFAULT_GUESTBOOK_NAME}
+            self.redirect('/?' + urllib.urlencode(query_params))
 
-        query_params = {'guestbook_name': DEFAULT_GUESTBOOK_NAME}
-        self.redirect('/?' + urllib.urlencode(query_params))
+        
