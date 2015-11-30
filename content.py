@@ -77,7 +77,7 @@ COURSES = [
 			"description"   : "This section detials the how to use validation, to ensure the data being sent to the webserver is valid.",
 			"concepts"  : [
 					{ "title"				: "Validation",
-						"description" : "Validation is the process in checking the data that is being sent to the server is the data the server expected"},
+						"description" : "Validation is the process in checking the data that is being sent to the server is the data the server expected.  Server side validation happens when content is sent to the server, checked, a response generated and sent back to the client.  Client side validation happens using a client side language, and is faster as no data is transmitted to the server."},
 					{ "title"				: "Checking Validation",
 						"description" : "Valdating reponses can be contained inside of a post function.  Inside the function, you would include logic to handle what happens if the input is correct, or if invaild, rerender the form."
 					},
@@ -97,12 +97,12 @@ COURSES = [
 			"description"   : "This section detials how to build a web application and reuse code to render html",
 			"concepts"  : [
 					{ "title"				: "Templates",
-						"description" : "A template is a library that is used to build complicated strings.  Jinga2 is the template library that Google AppEngine has built in.  To configure a template library, edit your app.yaml to include the library, and on your python file, import jinga2."},
+						"description" : "A template is a library that is used to build complicated strings.  Jinga2 is the template library that Google AppEngine has built in.  To configure a template library, edit your app.yaml to include the library, and on your python file, import jinga2.  Templates allow for programmers to establish fully modular html documents that can be used over and over, without having to recode the same page."},
 					{ "title"				: "Syntax",
-						"description" : "Vaiables can be substituted in Jinga using {{variablename}}.  Statement have a syntax of {%Statement%}."
+						"description" : "Vaiables can be substituted in Jinga using {{variablename}}.  Statement have a syntax of {%Statement%}.  Variable substitution allows a developer to inject strings from code to html.  This allows for developers to edit once in code, and have data updated everywhere the variable is used."
 					},
 					{ "title"				: "Inheritance",
-						"description" : "Inheritance allows you to have a base file, and share attributes with children files.  This is done by adding a statement on the children html pages stating that your document extends from your parent document"
+						"description" : "Inheritance allows you to have a base file, and share attributes with children files.  This is done by adding a statement on the children html pages stating that your document extends from your parent document, or base html code.  In doing this, you inherit all the attributes of the parent without having to seperate code for a particular page.  Overall this reduces the lines of HTML code, and allows for developers to reuse exisiting code."
 					},	
 				]
 			},
