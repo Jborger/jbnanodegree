@@ -102,7 +102,7 @@ COURSES = [
 						"description" : "Vaiables can be substituted in Jinga using {{variablename}}.  Statement have a syntax of {%Statement%}.  Variable substitution allows a developer to inject strings from code to html.  This allows for developers to edit once in code, and have data updated everywhere the variable is used."
 					},
 					{ "title"				: "Inheritance",
-						"description" : "Inheritance allows you to have a base file, and share attributes with children files.  This is done by adding a statement on the children html pages stating that your document extends from your parent document, or base html code.  In doing this, you inherit all the attributes of the parent without having to seperate code for a particular page.  Overall this reduces the lines of HTML code, and allows for developers to reuse exisiting code."
+						"description" : "Inheritance allows you to have a base file, and share attributes with children files.  This is done by adding a statement on the children html pages stating that your document extends from your parent document, or base html code.  In doing this, you inherit all the attributes of the parent without having to seperate code for a particular page.  Overall this reduces the lines of HTML code, and allows for developers to reuse exisiting code.  Doing this reduces complexity in the application, and limits possible bugs from having to build new code."
 					},	
 				]
 			},
