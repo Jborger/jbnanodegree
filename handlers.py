@@ -16,9 +16,9 @@ template = os.path.join(os.path.dirname(__file__), '/html_templates')
 
 #setup Jinga
 JINJA_ENVIRONMENT = jinja2.Environment(
-    loader=jinja2.FileSystemLoader('html_templates'),
-    extensions=['jinja2.ext.autoescape'],
-    autoescape=True)
+    loader = jinja2.FileSystemLoader('html_templates'),
+    extensions = ['jinja2.ext.autoescape'],
+    autoescape = True)
 
 #function to define datastore key
 def guestbook_key(guestbook_name=DEFAULT_GUESTBOOK_NAME):
@@ -70,9 +70,9 @@ class Guestbook(Handler):
         numOfQuery = 10
         guestbook_name = self.request.get('guestbook_name',DEFAULT_GUESTBOOK_NAME)
         greetings_query = Greeting.query(
-        ancestor=guestbook_key(DEFAULT_GUESTBOOK_NAME)).order(-Greeting.date)
+        ancestor = guestbook_key(DEFAULT_GUESTBOOK_NAME)).order(-Greeting.date)
         greetings = greetings_query.fetch(numOfQuery)
-        formmessage=self.request.get('formmessage')
+        formmessage = self.request.get('formmessage')
         template_values = {
            'greetings': greetings,
            'guestbook_name': urllib.quote_plus(DEFAULT_GUESTBOOK_NAME),
@@ -84,14 +84,6 @@ class Guestbook(Handler):
         guestbook_name = self.request.get('guestbook_name',
                                           DEFAULT_GUESTBOOK_NAME)
         greeting = Greeting(parent=guestbook_key(DEFAULT_GUESTBOOK_NAME))
-
-        #if users.get_current_user():
-         #   greeting.author = Author(
-          #          identity=users.get_current_user().user_id(),
-           #         email=users.get_current_user().email())
-        # Get the content from our request parameters, in this case, the message
-        # is in the parameter 'content'
-        #formmessage=self.request.get('formmessage')
         greeting.content = self.request.get('content')
 
         #check input server side for blank input

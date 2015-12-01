@@ -79,14 +79,11 @@ COURSES = [
 					{ "title"				: "Validation",
 						"description" : "Validation is the process in checking the data that is being sent to the server is the data the server expected.  Server side validation happens when content is sent to the server, checked, a response generated and sent back to the client.  Client side validation happens using a client side language, and is faster as no data is transmitted to the server."},
 					{ "title"				: "Checking Validation",
-						"description" : "Valdating reponses can be contained inside of a post function.  Inside the function, you would include logic to handle what happens if the input is correct, or if invaild, rerender the form."
-					},
+						"description" : "Valdating reponses can be contained inside of a post function.  Inside the function, you would include logic to handle what happens if the input is correct, or if invaild.  Using client side scripting language, like javascript you can validate the input prior to having to submit the form, this allows the user to check input prior to posting."},
 					{ "title"				: "String Substitution",
-						"description" : "String substitution is used when you want to inject the string inside of a object.  As an example, using (%) allows you to insert a variable into the surrounding text. "
-					},
+						"description" : "String substitution is used when you want to inject the string inside of a object.  As an example, using (%) allows you to insert a variable into the surrounding text.  Using String substitution, you can preform server side validation.  This would be done in the html code by using the value attribute on the input tag, and setting it to a variable.  Server side, the post function validates the input, and if it fails, the form rerenders, injects the submitted values into the corrisponding variables declared in html.  This presents the user with the same data they just submitted. This improves the UX of the application as it does not require the user to re-fillout the complete form."},
 					{ "title"				: "HTML Escaping",
-						"description" : "Certian characters do not render correctly in the broswer.  Using escaping, the website can render correctly the data you are want to display.  Typical escape characters are &quot for quotes &gt for greater than, &lt for less than, and &amp for ampersand" 
-					},
+						"description" : "Certian characters do not render correctly in the broswer.  Using escaping, the website can render correctly the data you are want to display.  Typical escape characters are &quot for quotes &gt for greater than, &lt for less than, and &amp for ampersand"},
 					{ "title"				: "Redirection",
 						"description" : "Redirection is when the server responds with a different page based on condition of the form" 
 					},
