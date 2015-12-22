@@ -118,6 +118,32 @@ COURSES = [
 				]	
 			}
 		]
+	},
+	{"title"    : "Stage 5: Exploring iOS Development",
+		"description" : ("In Section 5 I was given the oppertunity to explore additional concepts in development under the topics of Front End Development, Full Stack/Back End Development, iOS or Android Development"),
+		"lessons" : [
+			{
+			"title"     : "Intro to iOS App Development with Swift",
+			"description"  : "Below are my notes from my lessons in creating a iOS App written in Swift.  The application is a voice recorder.  The app's source code is in GitHub",
+			"concepts" : [
+					{	"title" 			: "Lesson 1: Introduction",
+					 	"description" : "Lesson 1 focused on a brief introduction to Xcode, and the project being created in this course, a voice recorder.  Most importantly the concept of MVC was introduced.  MVC, or Model-View-Controller, is a programing concept that allows a developer to create a model to hold application data, UI elements, and a management to broker communication between the two, to rapidly create applications.  This lesson also covered a very basic preview of Xcode, the IDE for creating OS X and iOS apps.  Items like the navigation pane, and assistance editor were briefly introduced."
+					},
+					{	"title" 			: "Lesson 2: Making V1 of the application",
+						"description" : "In this lesson, i learned how to import pictures into Xcode and use them as buttons.  The Assets.xcassets object manages items like graphics, and multimedia for the application.  I learned that assets should take into consideration when creating iOS apps so that the assets scale correctly for for Retina based devices.  I wrote a few lines of code in the ViewController.swift to connect my buttons to the Controller.  As i connected the buttons i created IBAction, and IBOutlet functions inside ViewController.swift. to declare what actions whould be taken on the object."
+					},
+					{	"title" 			: "Lesson 3a: Navigating App Screens",
+						"description" : "In this lesson, i learned about the View lifecycle.  The ViewDidLoad is a the method called when a class is created and the nib is initalized.  The ViewWillAppear is a method called before the first view appears.  The ViewDidAppear is a method called after the first view appears.  The ViewWillDisappear is a method called before the view disappears.  The ViewDidDisappear is a method called after the view disappears.  I learned that a Navigation Controller allows the a user to navigate thru a apps hiearchical content.  I also learned that a segue allows for a user to transition between 2 View Controllers, as well as allows data to be shared acrossed two unique views."
+					},
+					{	"title" 			: "Lesson 3b: Playing Audio",
+						"description" : "In this lession, i was introduced to the AVFoundation Framework.  The AVFoundation Framework is a library in iOS that allows developers to interact with, create, play audio content in iOS.  Using this framework i was able to create a function that played audio when the button was pressed.  Using the AVAudioPlayer Class i was able to use the rate method to speed up and slow down the audio being played."
+					},
+					{	"title" 			: "Lesson 4A: Recording Audio",
+						"description" : "Lesson 4 was where i attempted to add recording functionality to the application, unfortunately i was unable to get this implemented.  I created logic in the app to create the model, and store the data on disk once the record button was pressed.  The problem i had was that i was unable to get the Segue to work correctly between the two view controllers, resulting in the record button not progressing to the next view.  I spent a signifigant amount of time troubleshooting my code, but was unable to get the view to progress."
+					}
+				]
+			}
+		]
 	}
 ]
 
@@ -180,6 +206,26 @@ TOPICS = [
 						 "better than others.")
 		}
 		]
+	},
+	{"title" : "Swift Programming Resources",
+	"description" : ("Resources I used to help me with Swift. "),
+	"resources" : [
+		{
+		"title" : "iOS Developer Documentation",
+		"url" : "https://developer.apple.com/library/ios/navigation/",
+		"description" : ("Apples documentation on iOS Classes and Libries used for development.")
+		},
+		{
+		"title" : "Swift.org",
+		"url" : "https://swift.org/",
+		"description" : ("Documentation on Apple's Swift programming language and its open source efforts")
+		},
+		{
+		"title" : "Swift 2 for Absolute Beginners",
+		"url" : "http://www.amazon.com/Swift-Absolute-Beginners-Gary-Bennett/dp/1484214897",
+		"description" : ("Book I have started to read to in Safari Books in prep for my Next NanoDegree")
+		}
+		]
 	}
 ]
 
@@ -205,5 +251,12 @@ SECTIONS = [
 	 "short_title":"Feedback",
 	 "id"        : "feedback",
 	 "alt"	     : "feedback icon"
+	},
+	{"title"     : "Check me out on GitHub",
+	 "image_url" : "/images/GitHub.png",
+	 "href"      : "https://github.com/Jborger",
+	 "short_title":"",
+	 "id"        : "GitHub",
+	 "alt"	     : "GitHub icon"
 	}
 ]
